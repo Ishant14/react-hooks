@@ -1,1 +1,55 @@
-##React Hooks
+# React Hooks
+
+## useState
+
+`useState` hook is the replacement of the `state` and `setState` in the class component.
+
+```javascript
+const [state, setState] = useState({
+ selectedCharacter: 1,
+ side: 'light',
+ destroyed: false
+}); 
+```
+
+In the above code we can simply passed the initial state to the useStaet hooks, useState hook return an array which has 2 things. First is the current state of the component, the second is the method used to update the state.
+
+If we update the state using the method returned by useState then the whole state will be replaced by the state returned by the method. Lets an example, if the above is being updated as below,
+
+```javascript
+ const sideHandler = side => {
+    setState({ side: side });
+  };
+```
+then the whole state is being replaced and our new state will be as 
+
+```
+{
+  side: dark
+}
+```
+we will loose our all the other properties, **so the best practice during setState method returned by the useState is first destructure the previous state and then update it with new state as below** :
+
+```javascript
+ const sideHandler = side => {
+    setState( {
+    ....state,
+     side: side
+     });
+  };
+````  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
