@@ -2,6 +2,8 @@
 
 ## useState
 
+> state + setState() == useState()
+
 `useState` hook is the replacement of the `state` and `setState` in the class component.
 
 ```javascript
@@ -38,6 +40,28 @@ we will loose our all the other properties, **so the best practice during setSta
      });
   };
 ````  
+
+## useEffect
+
+> componentDidMount + componentDidUpdate + componentWillUnmount == useEffect()
+
+`useEffect` hooks has been created to handle the side effects in the component. For example : http request.
+
+`useEffect(() => {})` usEffect hook take a function, which will be executed only after the component has been changed.
+
+
+
+
+`useEffect((() => {}),[]) == componentDidMount` when we pass the empty arrays as second argument then the useEffect will be excuted only once after the component has been and not on every component change.
+
+
+
+
+
+
+
+
+
 
 
 
